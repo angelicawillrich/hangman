@@ -67,17 +67,8 @@ function App() {
   }, []);
 
   return (
-    <div
-      style={{
-        maxWidth: "800px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-        margin: "0 auto",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>
+    <div className="max-w-[800px] flex flex-col gap-8 my-0 mx-2 items-center justify-center self-center">
+      <div className="text-3xl text-center">
         {isWinner && "Winner! - Refresh and try again."}
         {isLoser && "Nice try! - Refresh and try again."}
       </div>
@@ -87,7 +78,7 @@ function App() {
         guessedLetters={guessedLetters}
         wordToGuess={wordToGuess}
       />
-      <div style={{ width: "100%", alignSelf: "strech" }}>
+      <div className="w-full items-stretch">
         <Keyboard
           disabled={isWinner || isLoser}
           activeLetters={guessedLetters.filter((letter) =>

@@ -10,30 +10,17 @@ export function HangmanWord({
   reveal = false,
 }: HangmanWordProps) {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: ".25em",
-        fontSize: "6rem",
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        fontFamily: "monospace",
-      }}
-    >
+    <div className="flex w-full gap-1 text-7xl font-bold font-mono uppercase justify-center">
       {wordToGuess.split("").map((letter, index) => (
         <span
-          style={{ borderBottom: ".1em solid black", borderRadius: "8px" }}
+          className="min-w-16 h-20 text-center border-b-[.5rem] border-solid border-black"
           key={index}
         >
           <span
-            style={{
-              visibility:
-                guessedLetters.includes(letter) || reveal
-                  ? "visible"
-                  : "hidden",
-              color:
-                !guessedLetters.includes(letter) && reveal ? "red" : "black",
-            }}
+            className={`
+              ${guessedLetters.includes(letter) || reveal ? "visible" : "hidden"}
+              ${!guessedLetters.includes(letter) && reveal ? "text-red-800" : "text-black"}
+            `}
           >
             {letter}
           </span>
