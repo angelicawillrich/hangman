@@ -1,26 +1,26 @@
 .btn {
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 8px;
-    background: none;
-    aspect-ratio: 1 / 1;
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: .5rem;
-    cursor: pointer;
-    color: black;
-  }
-  
-  .btn.active {
-    background-color: hsl(200, 100%, 50%);
-    color: white;
-  }
-  
-  .btn.inactive {
-    opacity: .3;
-  }
-  
-  .btn:hover:not(:disabled),
-  .btn:focus:not(:disabled) {
-    background-color: hsl(200, 100%, 75%);
-  }
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: none;
+  aspect-ratio: 1 / 1;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+.btn.active {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+}
+
+.btn.inactive {
+  opacity: 0.3;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus:not(:disabled) {
+  background-color: hsl(200, 100%, 75%);
+}

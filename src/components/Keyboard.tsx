@@ -1,14 +1,19 @@
-import styles from "./Keyboard.module.css"
-import keys from "../assets/data/lettersList.json"
+import styles from "./Keyboard.module.css";
+import keys from "../assets/data/lettersList.json";
 
 type KeyboardProps = {
-    activeLetters: string[]
-    inactiveLetters: string[]
-    disabled: boolean
-    addGuessLetter: (letter: string) => void
-}
+  activeLetters: string[];
+  inactiveLetters: string[];
+  disabled: boolean;
+  addGuessLetter: (letter: string) => void;
+};
 
-export function Keyboard({ activeLetters, inactiveLetters, disabled = false, addGuessLetter }: KeyboardProps) {
+export function Keyboard({
+  activeLetters,
+  inactiveLetters,
+  disabled = false,
+  addGuessLetter,
+}: KeyboardProps) {
   return (
     <div
       style={{
@@ -17,20 +22,20 @@ export function Keyboard({ activeLetters, inactiveLetters, disabled = false, add
         gap: ".5rem",
       }}
     >
-      {keys.map(key => {
-        const isActive = activeLetters.includes(key)
-        const isInactive = inactiveLetters.includes(key)
+      {keys.map((key) => {
+        const isActive = activeLetters.includes(key);
+        const isInactive = inactiveLetters.includes(key);
         return (
-        <button
+          <button
             onClick={() => addGuessLetter(key)}
             className={`${styles.btn} ${isActive ? styles.active : ""} ${isInactive ? styles.inactive : ""}`}
             key={key}
             disabled={isInactive || isActive || disabled}
-        >
+          >
             {key}
-        </button>
-    )
+          </button>
+        );
       })}
     </div>
-  )
+  );
 }
