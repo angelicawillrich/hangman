@@ -1,33 +1,6 @@
 import styles from "./Keyboard.module.css"
+import keys from "../assets/data/lettersList.json"
 
-const KEYS = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-]
 type KeyboardProps = {
     activeLetters: string[]
     inactiveLetters: string[]
@@ -44,7 +17,7 @@ export function Keyboard({ activeLetters, inactiveLetters, disabled = false, add
         gap: ".5rem",
       }}
     >
-      {KEYS.map(key => {
+      {keys.map(key => {
         const isActive = activeLetters.includes(key)
         const isInactive = inactiveLetters.includes(key)
         return (
