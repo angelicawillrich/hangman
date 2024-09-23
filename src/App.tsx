@@ -4,6 +4,7 @@ import { HangmanDrawing } from "./components/HangmanDrawing";
 import { HangmanWord } from "./components/HangmanWord";
 import { Keyboard } from "./components/Keyboard";
 import "./index.css";
+import { Modal } from "./components/modal";
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)];
@@ -66,12 +67,13 @@ function App() {
     };
   }, []);
 
+  const reset = () => {
+    setGuessedLetters([]);
+    setWordToGuess(getWord());
+  };
+
   return (
-    <div className="max-w-[800px] flex flex-col gap-8 my-0 mx-2 items-center justify-center self-center">
-      <div className="text-3xl text-center">
-        {isWinner && "Winner! - Refresh and try again."}
-        {isLoser && "Nice try! - Refresh and try again."}
-      </div>
+    <div className="flex flex-col max-w-[800px] gap-8 my-0 mx-2 items-center justify-center">
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord
         reveal={isLoser}
@@ -88,6 +90,18 @@ function App() {
           addGuessLetter={addGuessedLetter}
         />
       </div>
+      <Modal isOpen={isWinner || isLoser} onClose={reset}>
+        <div className="flex flex-col justify-center">
+          <h1 className="text-lg font-semibold">
+            {isWinner && "Winner!"}
+            {isLoser && "Nice try!"}
+          </h1>
+          <p>
+            {isWinner && "Play again."}
+            {isLoser && "Try again."}
+          </p>
+        </div>
+      </Modal>
     </div>
   );
 }
