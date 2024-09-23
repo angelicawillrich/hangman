@@ -3,6 +3,7 @@ import words from "./assets/data/wordList.json";
 import { HangmanDrawing } from "./components/HangmanDrawing";
 import { HangmanWord } from "./components/HangmanWord";
 import { Keyboard } from "./components/Keyboard";
+import "./index.css";
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)];
