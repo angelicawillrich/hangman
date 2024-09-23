@@ -13,7 +13,7 @@ export function Keyboard({ activeLetters, inactiveLetters, disabled = false, add
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(55px, 1fr))",
         gap: ".5rem",
       }}
     >
