@@ -10,7 +10,10 @@ export function HangmanWord({
   reveal = false,
 }: HangmanWordProps) {
   return (
-    <div className="flex w-full gap-1 text-7xl font-bold font-mono uppercase justify-center">
+    <div
+      data-testid="hangman_word"
+      className="flex w-full gap-1 text-7xl font-bold font-mono uppercase justify-center"
+    >
       {wordToGuess.split("").map((letter, index) => (
         <span
           className="min-w-16 h-20 text-center border-b-[.5rem] border-solid border-black"

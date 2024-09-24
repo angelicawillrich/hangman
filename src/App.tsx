@@ -6,12 +6,15 @@ import { Keyboard } from "./components/Keyboard";
 import "./index.css";
 import { Modal } from "./components/modal";
 
-function getWord() {
+export function getWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState(getWord());
+  const searchParams = new URLSearchParams(window.location.search);
+  const testWord = searchParams.get("testWord");
+
+  const [wordToGuess, setWordToGuess] = useState(testWord || getWord());
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
@@ -74,6 +77,9 @@ function App() {
 
   return (
     <div className="flex flex-col max-w-[800px] gap-8 my-0 mx-2 items-center justify-center">
+      <h1 data-testid="title" className="text-6xl">
+        Hangman
+      </h1>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord
         reveal={isLoser}
