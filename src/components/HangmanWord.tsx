@@ -12,11 +12,11 @@ export function HangmanWord({
   return (
     <div
       data-testid="hangman_word"
-      className="flex w-full gap-1 text-7xl font-bold font-mono uppercase justify-center"
+      className="flex w-full gap-1 md:text-7xl text-4xl font-bold font-mono uppercase justify-center"
     >
       {wordToGuess.split("").map((letter, index) => (
         <span
-          className="min-w-16 h-20 text-center border-b-[.5rem] border-solid border-black"
+          className="md:min-w-16 min-w-8 md:h-20 h-11 text-center border-b-[.5rem] border-solid border-black"
           key={index}
         >
           <span
