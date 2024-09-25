@@ -16,7 +16,7 @@ export function Keyboard({
   return (
     <div
       data-testid="keyboard"
-      className="grid grid-cols-[repeat(auto-fit,minmax(55px,1fr))] gap-4"
+      className="md:max-w-[800px] max-w-[400px] grid grid-cols-[repeat(auto-fit,minmax(55px,1fr))] gap-4"
     >
       {keys.map((key) => {
         const isActive = activeLetters.includes(key);

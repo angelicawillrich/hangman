@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col max-w-[800px] gap-8 my-0 mx-2 items-center justify-center">
+    <div className="flex flex-col gap-8 my-2 mx-2 items-center justify-center">
       <h1 data-testid="title" className="text-6xl">
         Hangman
       </h1>
@@ -86,7 +86,7 @@ function App() {
         guessedLetters={guessedLetters}
         wordToGuess={wordToGuess}
       />
-      <div className="w-full items-stretch">
+      <div className="md:max-w-[800px] max-w-[400px] items-stretch">
         <Keyboard
           disabled={isWinner || isLoser}
           activeLetters={guessedLetters.filter((letter) =>

@@ -12,7 +12,7 @@ export function HangmanWord({
   return (
     <div
       data-testid="hangman_word"
-      className="flex w-full gap-1 md:text-7xl text-4xl font-bold font-mono uppercase justify-center"
+      className="flex md:max-w-[800px] max-w-[400px] gap-1 md:text-7xl text-4xl font-bold font-mono uppercase justify-center"
     >
       {wordToGuess.split("").map((letter, index) => (
         <span
